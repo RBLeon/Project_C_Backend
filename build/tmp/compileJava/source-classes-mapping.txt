@@ -1,8 +1,0 @@
-nl/CrsX/config/ApplicationContext.java
- nl.CrsX.config.ApplicationContext
-nl/CrsX/controller/TitleController.java
- nl.CrsX.controller.TitleController
-nl/CrsX/config/SpringInitializer.java
- nl.CrsX.config.SpringInitializer
-nl/CrsX/config/SpringMvcConfig.java
- nl.CrsX.config.SpringMvcConfig
