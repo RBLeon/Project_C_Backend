@@ -48,6 +48,10 @@ public class Car {
                 "id=" + id +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
+                ", location='" + location + '\'' +
+                ", mileage='" + mileage + '\'' +
+                ", carAge='" + carAge + '\'' +
+                ", doors='" + doors + '\'' +
                 '}';
     }
 

@@ -6,7 +6,7 @@ import nl.CrsX.model.Car;
 
 public interface CarDao {
 
-    long save(Car car);
+    Car save(Car car);
 
     Car get(long id);
 
@@ -15,5 +15,6 @@ public interface CarDao {
     void update(long id, Car car);
 
     void delete(long id);
+
 
 }

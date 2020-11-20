@@ -2,6 +2,7 @@ package nl.CrsX.service;
 
 import nl.CrsX.dao.CarDao;
 import nl.CrsX.model.Car;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,33 +12,37 @@ import java.util.List;
 @Service
 public class CarServiceImp implements CarService {
 
+
     @Autowired
     private CarDao carDao;
 
     @Override
-    public long save(Car car) {
-        return 0;
+    @Transactional
+    public Car save(Car car) {
+        return carDao.save(car);
     }
 
     @Override
+    @Transactional
     public Car get(long id) {
-        return null;
+        return carDao.get(id);
     }
 
     @Override
     @Transactional
     public List<Car> list() {
-
         return carDao.list();
     }
 
     @Override
+    @Transactional
     public void update(long id, Car car) {
-
+        carDao.update(id, car);
     }
 
     @Override
+    @Transactional
     public void delete(long id) {
-
+        carDao.delete(id);
     }
 }

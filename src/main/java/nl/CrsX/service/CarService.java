@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CarService {
 
-    long save(Car car);
+    Car save(Car car);
 
     Car get(long id);
 

@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import nl.CrsX.model.Car;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Repository
 public class CarDaoImp implements CarDao {
@@ -21,9 +23,9 @@ public class CarDaoImp implements CarDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public long save(Car car) {
+    public Car save(Car car) {
         sessionFactory.getCurrentSession().save(car);
-        return car.getId();
+        return car;
     }
 
     @Override
