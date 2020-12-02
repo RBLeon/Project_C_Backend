@@ -42,6 +42,19 @@ public class Car {
         this.model = model;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", location='" + location + '\'' +
+                ", mileage='" + mileage + '\'' +
+                ", carAge='" + carAge + '\'' +
+                ", doors='" + doors + '\'' +
+                '}';
+    }
+
     public String getLocation() {
         return location;
     }
