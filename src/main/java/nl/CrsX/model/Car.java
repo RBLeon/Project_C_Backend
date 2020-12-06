@@ -1,9 +1,6 @@
 package nl.CrsX.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "Car")
 public class Car {
@@ -17,6 +14,7 @@ public class Car {
     private Integer mileage;
     private Integer carAge;
     private Integer doors;
+    private Integer ImageId;
 
     public Long getId() {
         return id;
@@ -86,4 +84,5 @@ public class Car {
     public void setDoors(Integer doors) {
         this.doors = doors;
     }
+
 }

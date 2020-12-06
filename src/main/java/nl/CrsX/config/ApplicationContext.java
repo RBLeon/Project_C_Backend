@@ -14,6 +14,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import javax.servlet.annotation.MultipartConfig;
+
 import static org.hibernate.cfg.Environment.*;
 
 @Configuration

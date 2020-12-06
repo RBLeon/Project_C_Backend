@@ -1,6 +1,5 @@
 package nl.CrsX.controller;
 
-import nl.CrsX.model.Car;
 import nl.CrsX.model.User;
 import nl.CrsX.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
