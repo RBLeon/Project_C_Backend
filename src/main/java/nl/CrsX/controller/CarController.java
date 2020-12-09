@@ -18,7 +18,7 @@ public class CarController {
     private CarService carService;
 
     //Get all the cars
-    @GetMapping("/api/Car")
+    @GetMapping("/api/getCars")
     public ResponseEntity<List<Car>> getCars(){
         List<Car> list = carService.list();
         return ResponseEntity.ok().body(list);
