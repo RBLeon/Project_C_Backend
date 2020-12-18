@@ -12,8 +12,15 @@ import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.GenericWebApplicationContext;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.DispatcherServlet;
 
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 import javax.servlet.annotation.MultipartConfig;
 
 import static org.hibernate.cfg.Environment.*;
@@ -66,10 +73,5 @@ public class ApplicationContext {
        transactionManager.setSessionFactory(getsSessionFactoryBean().getObject());
        return transactionManager;
     }
-    @Bean(name = "multipartResolver")
-    public CommonsMultipartResolver multipartResolver() {
-        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-        multipartResolver.setMaxUploadSize(100000);
-        return multipartResolver;
-    }
+
 }

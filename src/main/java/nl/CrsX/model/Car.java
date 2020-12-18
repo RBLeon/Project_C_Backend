@@ -14,7 +14,7 @@ public class Car {
     private Integer mileage;
     private Integer carAge;
     private Integer doors;
-    private Integer ImageId;
+    private String imagePath;
 
     public Long getId() {
         return id;
@@ -50,6 +50,7 @@ public class Car {
                 ", mileage='" + mileage + '\'' +
                 ", carAge='" + carAge + '\'' +
                 ", doors='" + doors + '\'' +
+                ", imagePath ='" + imagePath + '\'' +
                 '}';
     }
 
@@ -85,4 +86,11 @@ public class Car {
         this.doors = doors;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 }
