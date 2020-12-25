@@ -27,7 +27,7 @@ public class CarController {
     //Get 1 car
     @GetMapping("/api/getCarById")
     @ResponseBody
-    public Car getCarById(@RequestParam int id){
+    public Car getCarById(@RequestParam(name = "id") int id){
         Car retrievedCar = carService.get(id);
         return retrievedCar;
     }
