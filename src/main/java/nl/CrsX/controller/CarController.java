@@ -50,12 +50,11 @@ public class CarController {
     }
 
     //Update a car
-    @DeleteMapping("/api/updateCar")
+    @PutMapping("/api/updateCar")
     @ResponseBody
     public String UpdateCar(@RequestParam int id, @RequestBody Car car){
         carService.update(id, car);
         return "Car has been updated";
     }
-
 
 }
