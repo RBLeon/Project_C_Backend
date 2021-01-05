@@ -25,6 +25,14 @@ public class CarController {
         return ResponseEntity.ok().body(list);
     }
 
+    //Get 1 car
+    @GetMapping("/api/getCarById")
+    @ResponseBody
+    public Car getCarById(@RequestParam(name = "id") int id){
+        Car retrievedCar = carService.get(id);
+        return retrievedCar;
+    }
+
     //Add a car
     @PostMapping("/api/addCar")
     @ResponseBody
