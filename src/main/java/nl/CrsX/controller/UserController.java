@@ -71,6 +71,7 @@ public class UserController {
         }
     }
 
+    //delete data from database
     @DeleteMapping(value = "/api/deleteUser")
     @ResponseBody
     public String DeleteUser(@RequestParam(name = "id") int id){
@@ -78,7 +79,8 @@ public class UserController {
         return "User has been deleted.";
     }
 
-    @PatchMapping(value = "/api/updateUser")
+    //Update data from single user in database
+    @PutMapping(value = "/api/updateUser")
     @ResponseBody
     public String UpdateUser(@RequestParam(name = "id") int id, @RequestBody User user){
         userService.update(id, user);
