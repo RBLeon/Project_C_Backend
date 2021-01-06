@@ -15,13 +15,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    //get User
+    //get all Users
     @GetMapping("/api/getUsers")
     public ResponseEntity<List<User>> getUser(){
         List<User> list = userService.list();
         return ResponseEntity.ok().body(list);
     }
 
+
+    //get 1 user
     @GetMapping("/api/getUserById")
     @ResponseBody
     public User getUserById(@RequestParam(name = "id") int id){
