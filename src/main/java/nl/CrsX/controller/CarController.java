@@ -1,15 +1,13 @@
 package nl.CrsX.controller;
 
 import nl.CrsX.model.Car;
-import nl.CrsX.model.User;
 import nl.CrsX.service.CarService;
-import nl.CrsX.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.IOException;
+//import java.io.File;
+//import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -19,11 +17,18 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    //Get all the cars
+    //Get all the Cars
     @GetMapping("/api/getCars")
     public ResponseEntity<List<Car>> getCars(){
         List<Car> list = carService.list();
         return ResponseEntity.ok().body(list);
+    }
+
+    //Get 1 car
+    @GetMapping("/api/getCarById")
+    @ResponseBody
+    public Car getCarById(@RequestParam(name = "id") int id){
+        return carService.get(id);
     }
 
     //Add a car
@@ -48,6 +53,5 @@ public class CarController {
         carService.update(id, car);
         return "Car has been updated";
     }
-
 
 }
