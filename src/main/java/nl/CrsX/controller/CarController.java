@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class CarController {
@@ -40,9 +41,8 @@ public class CarController {
         carService.delete(id);
         return "Car has been deleted";
     }
-
     //Update a car
-    @DeleteMapping("/api/updateCar")
+    @PutMapping("/api/updateCar")
     @ResponseBody
     public String UpdateCar(@RequestParam int id, @RequestBody Car car){
         carService.update(id, car);
