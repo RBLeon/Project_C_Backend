@@ -27,6 +27,18 @@ public class ReservationServiceImp implements ReservationService {
 
     @Override
     @Transactional
+    public List<Reservation> getReservationByUserId(long id) {
+        return reservationDao.getReservationByUserId(id);
+    }
+
+    @Override
+    @Transactional
+    public List<Reservation> getReservationByCarId(long id) {
+        return reservationDao.getReservationByCarId(id);
+    }
+
+    @Override
+    @Transactional
     public List<Reservation> list() {
         return reservationDao.list();
     }

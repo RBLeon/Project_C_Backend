@@ -8,6 +8,10 @@ public interface ReservationService {
 
     Reservation get(long id);
 
+    List<Reservation> getReservationByUserId(long id);
+
+    List<Reservation> getReservationByCarId(long id);
+
     List<Reservation> list();
 
     void update(long id, Reservation reservation);

@@ -1,6 +1,7 @@
 package nl.CrsX.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "User")
 public class User {
@@ -16,6 +17,8 @@ public class User {
     private String Address;
     private String Email;
     @Column(unique = true)
+    private Date Age;
+    private String PhoneNumber;
 
     public Long getId() {
         return id;
@@ -72,6 +75,23 @@ public class User {
     public void setEmail(String email) {
         Email = email;
     }
+
+    public Date getAge() {
+        return Age;
+    }
+
+    public void setAge(Date age) {
+        Age = age;
+    }
+
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
+    }
+
     @Override
     public String toString() {
         return firstName + " " +lastName + " " + Email + " " + Address + " " + userName + " " + lastName;

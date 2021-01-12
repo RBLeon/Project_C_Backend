@@ -28,6 +28,19 @@ public class ReservationController {
         return reservationService.get(id);
     }
 
+    //Get 1 Reservation by userId
+    @GetMapping("/api/getReservationByUserId")
+    @ResponseBody
+    public List<Reservation> getReservationByUserId(@RequestParam(name = "id") int id){
+        return reservationService.getReservationByUserId(id);
+    }
+
+    //Get 1 Reservation by carId
+    @GetMapping("/api/getReservationByCarId")
+    @ResponseBody
+    public List<Reservation> getReservationByCarId(@RequestParam(name = "id") int id){
+        return reservationService.getReservationByCarId(id);
+    }
     //Add a Reservation
     @PostMapping("/api/addReservation")
     @ResponseBody
@@ -45,7 +58,7 @@ public class ReservationController {
     }
 
     //Update a Reservation
-    @DeleteMapping("/api/updateReservation")
+    @PutMapping("/api/updateReservation")
     @ResponseBody
     public String UpdateReservation(@RequestParam int id, @RequestBody Reservation reservation){
         reservationService.update(id, reservation);
