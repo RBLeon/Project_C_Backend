@@ -57,6 +57,9 @@ public class UserDaoImp implements UserDao{
         user2.setLastName(user.getLastName());
         user2.setPassword(user.getPassword());
         user2.setUserName(user.getUserName());
+        user2.setAge(user.getAge());
+        user2.setPhoneNumber(user.getPhoneNumber());
+        user2.setAdmin(user.getAdmin());
         session.flush();
     }
 
