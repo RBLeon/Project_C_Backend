@@ -1,9 +1,11 @@
 package nl.CrsX.controller;
 
 import nl.CrsX.model.User;
+import nl.CrsX.service.MailService;
 import nl.CrsX.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private MailService mailService;
 
     //get User
     @GetMapping("/api/getUsers")
@@ -50,6 +55,7 @@ public class UserController {
         }
         else{
             userService.save(user);
+            mailService.sendSimpleMessage(user.getEmail(), "Validation", "You have been added to the website successfully.");
             return user.getFirstName() + " " + user.getLastName() + " has been added";
         }
     }
@@ -82,4 +88,13 @@ public class UserController {
         userService.update(id, user);
         return "User has been updated.";
     }
+
+//    @PatchMapping(value ="/api/ChangePassword")
+//    @ResponseBody
+//    public String ChangePassword(@RequestParam(name="pw") String pw,@RequestBody User user  ){
+//
+//    }
+
+
+
 }

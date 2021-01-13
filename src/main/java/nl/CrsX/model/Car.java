@@ -12,6 +12,7 @@ public class Car {
     private String model;
     private String location;
     private Integer mileage;
+    private Integer price;
     private Integer carAge;
     private Integer doors;
     private String imagePath;
@@ -92,5 +93,13 @@ public class Car {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
