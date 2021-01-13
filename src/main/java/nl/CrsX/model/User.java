@@ -19,6 +19,7 @@ public class User {
     @Column(unique = true)
     private Date Age;
     private String PhoneNumber;
+    private Boolean admin;
 
     public Long getId() {
         return id;
@@ -90,6 +91,14 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 
     @Override
