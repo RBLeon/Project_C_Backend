@@ -82,7 +82,7 @@ public class UserController {
         return "User has been deleted.";
     }
 
-    @PatchMapping(value = "/api/updateUser")
+    @PutMapping(value = "/api/updateUser")
     @ResponseBody
     public String UpdateUser(@RequestParam(name = "id") int id, @RequestBody User user){
         userService.update(id, user);
