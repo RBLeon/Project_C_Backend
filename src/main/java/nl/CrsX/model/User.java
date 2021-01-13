@@ -19,6 +19,11 @@ public class User {
     @Column(unique = true)
     private Date Age;
     private String PhoneNumber;
+    private boolean Token;
+
+    public boolean getToken(){return Token ; }
+
+    public void setToken(boolean Token){ this.Token = Token; }
 
     public Long getId() {
         return id;

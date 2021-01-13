@@ -88,4 +88,13 @@ public class UserController {
         userService.update(id, user);
         return "User has been updated.";
     }
+
+//    @PatchMapping(value ="/api/ChangePassword")
+//    @ResponseBody
+//    public String ChangePassword(@RequestParam(name="pw") String pw,@RequestBody User user  ){
+//
+//    }
+
+
+
 }
